@@ -1,8 +1,7 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'].'/travel/config/info.config.php';
 
-foreach ($anchors as $key => $value){
-    echo "<li> <a href= {$anchors[$key][0]} class='nav__a'> {$anchors[$key][1]} </a>  </li>";
-    next($anchors);
+require $_SERVER['DOCUMENT_ROOT'].'/travel/config/info.config.php';
+for ($i=0; $i < count($anchors['anchor']) ; $i++) {
+    echo "<li> <a href= {$anchors['anchor'][$i]} class='nav__a'> {$anchors['content'][$i]} </a>  </li>";
 }

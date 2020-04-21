@@ -13,16 +13,7 @@ require "includes/header.inc.php";
                 <img src="img/logo.png" alt="лого, компания, Nordic">
             </div>
             <nav class="nav">
-<?php
-
-while ($anchor = current($anchors)) {
-    $tem = key($anchors);
-    echo "<a href={$anchors[$tem][0]} class='nav__a'> {$anchors[$tem][1]} </a> ";
-    next($anchors);
-}
-
-?>
-
+<?=require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/anchors.inc.php'; ?>
             </nav>
             <input type="text" id="temp_input">
             <button class="temp_button"> Клик</button>
