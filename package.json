@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/isakura313/04_20#readme",
   "devDependencies": {
+    "bulma": "^0.8.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",
