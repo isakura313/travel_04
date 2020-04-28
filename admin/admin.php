@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/travel/admin/admin_head.admin.php';
+require $_SERVER['DOCUMENT_ROOT'].'/admin/admin_head.admin.php';
 echo ("<section class='has-background-link columns'>
     <div class='column is-full has-text-white' >
         <h1 class='label is-size-2 has-text-centered '> Hello user</h3>
@@ -14,7 +14,7 @@ echo ("<section class='has-background-link columns'>
         <button class="button is-size-4 is-danger"> Редактировать параграфы</button>
         </a>
 
-        <a href="/admin/cards">
+        <a href="cards.admin.php">
         <button class="button is-size-4 is-danger"> Редактировать карточки</button>
         </a>
 

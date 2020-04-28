@@ -1,7 +1,7 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/travel/admin/admin_head.admin.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/travel/config/info.config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/admin/admin_head.admin.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/config/info.config.php';
 ?>
 
 <section class="columns has-background-info is-centered">

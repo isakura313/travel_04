@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/travel/config/info.config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/config/info.config.php';
 
 $title = "Незабываемый сайт";
 $comma = implode(", ", $keywords);
@@ -14,7 +14,7 @@ require "includes/header.inc.php";
                 <img src="img/logo.png" alt="лого, компания, Nordic">
             </div>
             <nav class="nav">
-<?=require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/anchors.inc.php'; ?>
+<?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/anchors.inc.php'; ?>
             </nav>
             <input type="text" id="temp_input">
             <button class="temp_button"> Клик</button>
@@ -41,7 +41,7 @@ require "includes/header.inc.php";
 <ul>
 
 <!-- здесь у нас пойдут ссылки -->
-<?=require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/anchors.inc.php'; ?>
+<?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/anchors.inc.php'; ?>
     </ul>
         </div>
         <div class="promo" id="main">
@@ -68,7 +68,7 @@ require "includes/header.inc.php";
         </div>
 
         <div class="info">
-<?=require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/parag.inc.php'; ?>
+<?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/parag.inc.php'; ?>
 
 
         </div>
@@ -83,19 +83,19 @@ require "includes/header.inc.php";
         </div>
         <div class="reasons" id="about">
             <ul class="reasons__ul">
-    <?=require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/reasons.inc.php';?>
+    <?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/reasons.inc.php';?>
             </ul>
         </div>
         <div class="cards">
     <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/cards.inc.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/cards.inc.php';
 
 ?>
         </div>
 <div class="wrap_panel">
 <?=
-require $_SERVER['DOCUMENT_ROOT'] . '/travel/includes/faq.inc.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/faq.inc.php';
 
 ?>
 </div>

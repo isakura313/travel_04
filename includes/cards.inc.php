@@ -9,5 +9,4 @@ for ($i=0; $i < count($cards['header']); $i++) {
                     <div class='card__line'></div>
                     <p class='card__p'> {$cards['parag'][$i]}</p>
                 </div>";
-    next($cards);
 }

@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/travel/config/bd.config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/config/bd.config.php';
 
 $back = "<p> <a href=\"javascript: history.back()\">Вернуться назад </a> </p>";
 
@@ -13,12 +13,11 @@ if($result = $connect-> query("SELECT * FROM keywords")){
     while($row = $result->fetch_assoc()){
         array_push($keywords, $row['keywords']);
     }
-} else{
-    echo("произошла ошибка запроса");
 }
 
 
-}if($result = $connect->query("SELECT * FROM anchors ORDER BY='ordera'")){
+
+if($result = $connect->query("SELECT * FROM anchors")){
     $anchors_full = ['id'=>[],'anchor'=>[], 'content'=>[], 'ordera'=>[]];
     while($row = $result->fetch_assoc()){
 
@@ -60,12 +59,14 @@ if($result = $connect->query("SELECT * FROM reasons")){
 
 
 if($result = $connect->query("SELECT * FROM cards")){
-    $cards = ['img'=> [], 'header'=> [], 'parag'=>[], 'alt' => []];
+    $cards = ['id'=>[],'img'=> [], 'header'=> [], 'parag'=>[], 'alt' => [], 'ordera'=>[]];
     while($row = $result->fetch_assoc()){
+        array_push($cards['id'], $row['id']);
         array_push($cards['img'], $row['img']);
         array_push($cards['header'], $row['header']);
         array_push($cards['parag'], $row['parag']);
         array_push($cards['alt'], $row['alt']);
+        array_push($cards['ordera'], $row['ordera']);
     }
 }
 

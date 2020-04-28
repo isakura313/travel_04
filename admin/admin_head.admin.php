@@ -6,5 +6,5 @@
     <title>ADminka</title>
     '<link rel='stylesheet' href='http://"); 
     echo  $_SERVER['HTTP_HOST'] ;
-    echo ("/travel/css/bulma.min.css'></head> <body>
+    echo ("/css/bulma.min.css'></head> <body>
     ");

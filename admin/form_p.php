@@ -1,6 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/travel/config/bd.config.php';
-require $_SERVER['DOCUMENT_ROOT'].'/travel/config/info.config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/config/bd.config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/config/info.config.php';
 $ans = $_GET['choose'];
 $id = $_GET['id'];
 $content = $_GET['content'];
