@@ -6,14 +6,13 @@ require $_SERVER['DOCUMENT_ROOT'] . '/travel/config/info.config.php';
 
 <section class="columns has-background-info is-centered">
     <div class="column is-half has-text-centered">
-        <h3 class="title has-text-white"> Редактирование параграфов</h3>
+        <h3 class="title has-text-white"> Редактирование ссылочек</h3>
         <hr class="login-hr">
-        <p class="is-size-5 has-text-white"> Введите контент, каждый параграф по отдельности, если не хотите, что бы они
-            склеились</p>
+        <p class="is-size-5 has-text-white"> Введите контент, каждую ссылку по отдельности
         <figure class="image is-128x128">
-            <img src="../img/moscow.png" alt="">
+            <img src="../img/big-ben.png" alt="">
         </figure>
-        <form action="form_p.php" method="GET" class="has-background-light">
+        <form action="form_a.php" method="GET" class="has-background-primary">
             <div class="field">
                 <label class="radio label">
                     <input type="radio" name="choose" value="ins" required>
@@ -28,14 +27,21 @@ require $_SERVER['DOCUMENT_ROOT'] . '/travel/config/info.config.php';
                     Редактировать данные
                 </label>
             </div>
+
             <div class="field">
                 <div class="box">
-                    <label for="id" class="label"> Введите id параграфа</label>
+                    <label for="id" class="label"> Введите id ссылки</label>
                     <input type="text" class="input is-medium" placeholder="id" name="id">
 
+                    <label for="anchor" class="label"> Введите адрес ссылки</label>
+                    <input type="text" class="input is-medium" placeholder="ссылка" name="anchor">
 
-                    <label for="content" class="label"> Введите данные параграфа</label>
-                    <textarea name="content" cols="40" rows="15" class="is-size-4" style="padding: 10px;"></textarea>
+
+                    <label for="content" class="label"> Введите  контент ссылки</label>
+                    <textarea name="content" cols="40" rows="5" class="is-size-4" style="padding: 10px;"></textarea>
+
+                    <label for="ordera" class="label"> Введите номер в порядке </label>
+                    <input type="text" class="input is-medium" placeholder="order" name="ordera">
                 </div>
             </div>
 
@@ -53,19 +59,23 @@ require $_SERVER['DOCUMENT_ROOT'] . '/travel/config/info.config.php';
                 <thead>
                 <tr>
                     <th> ID</th>
+                    <th> Anchor</th>
                     <th> Content</th>
+                    <th> Order</th>
                 </tr>
                 </thead>
 
 
                 <?php
 
-                for ($i = 0; $i < count($parag_full['id']); $i++) {
-                    echo "<tr>
-    <th>{$parag_full['id'][$i]} </th>
-     <th>{$parag_full['content'][$i]} </th>
-    </tr>";
+                for ($i = 0; $i < count($anchors_full['anchor']); $i++) {
+                    echo " <tr> <th>  {$anchors_full['id'][$i]} </th>
+                    <th>   {$anchors_full ['anchor'][$i]}   </th>
+                    <th>   {$anchors_full ['content'][$i]}   </th>
+                    <th>   {$anchors_full ['ordera'][$i]}   </th>
+                        </tr>";
                 }
+
                 ?>
             </table>
         </div>

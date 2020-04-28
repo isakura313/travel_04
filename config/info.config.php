@@ -18,14 +18,20 @@ if($result = $connect-> query("SELECT * FROM keywords")){
 }
 
 
-if($result = $connect->query("SELECT * FROM anchors")){
-    $anchors = ['anchor'=>[], 'content'=>[]];
+}if($result = $connect->query("SELECT * FROM anchors ORDER BY='ordera'")){
+    $anchors_full = ['id'=>[],'anchor'=>[], 'content'=>[], 'ordera'=>[]];
     while($row = $result->fetch_assoc()){
-        array_push($anchors["anchor"], $row['anchor']);
-        array_push($anchors["content"], $row['content']);
+
+        array_push($anchors_full["id"], $row['id']);
+        array_push($anchors_full["anchor"], $row['anchor']);
+        array_push($anchors_full["content"], $row['content']);
+        array_push($anchors_full["ordera"], $row['ordera']);
 
     }
 }
+
+
+
 
 if($result = $connect->query("SELECT * FROM parag")){
     $parag = [];
