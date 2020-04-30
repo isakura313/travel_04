@@ -1,4 +1,5 @@
 <?php
+$title_info = "Главная страница админки";
 require $_SERVER['DOCUMENT_ROOT'].'/admin/admin_head.admin.php';
 echo ("<section class='has-background-link columns'>
     <div class='column is-full has-text-white' >

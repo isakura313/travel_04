@@ -1,4 +1,5 @@
 <?php
+$title_info = "Админка ссылки";
 
 require $_SERVER['DOCUMENT_ROOT'] . '/admin/admin_head.admin.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/config/info.config.php';
