@@ -7,6 +7,7 @@ $back = "<p> <a href=\"javascript: history.back()\">Вернуться наза�
 $back_timer = "<script>
 setTimeout(() => window.history.back(), 5000)
 </script>";
+$home =  "http://$_SERVER[HTTP_HOST]" . "/admin/admin.php";
 
 if($result = $connect-> query("SELECT * FROM keywords")){
     $keywords = [];

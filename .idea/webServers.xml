@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4925059a-3540-432f-b0d9-df91ed2ce3b9" name="anime" url="http://isakura313.zonopo.ru/">
+        <fileTransfer rootFolder="/public_html" host="isakura313.zonopo.ru" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

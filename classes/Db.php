@@ -11,4 +11,10 @@ class Db
         }
         return $connect;
     }
+    public static function get_single_element($sql_statement){
+        $result = self::getdbconnect()-> query($sql_statement);
+        $data = $result->fetch_row();
+        return $data[0];
+}
+
 }
