@@ -87,7 +87,19 @@ if($result = $connect->query("SELECT * FROM faq")){
         $i++;
     }
 }
-// print_r($faq);  
+
+if($result = $connect->query("SELECT * FROM feedback WHERE review = 1")){
+    $feedback = ['topic'=>[], 'content' => [], 'author'=>[], 'created_at'=>[]];
+    while($row = $result->fetch_assoc()){
+        array_push($feedback['topic'], $row['topic']);
+        array_push($feedback['content'], $row['content']);
+        array_push($feedback['author'], $row['author']);
+        array_push($feedback['created_at'], $row['created_at']);
+    }
+}
+
+
+
 
 
 // $faq = [['Какова стоимость путешествия','Стоимость путешествия зависит от страны'], ['Нужен ли загранник для получения визы?', 'Да, очень нужен'], ['Есть ли страховка в путешествии?', 'Нет, все будет нормально']];

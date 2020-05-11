@@ -14,7 +14,9 @@ require "includes/header.inc.php";
                 <img src="img/logo.png" alt="лого, компания, Nordic">
             </div>
             <nav class="nav">
-<?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/anchors.inc.php'; ?>
+            <?php
+                require $_SERVER['DOCUMENT_ROOT'] . '/includes/anchors.inc.php';
+            ?>
             </nav>
             <input type="text" id="temp_input">
             <button class="temp_button"> Клик</button>
@@ -41,7 +43,8 @@ require "includes/header.inc.php";
 <ul>
 
 <!-- здесь у нас пойдут ссылки -->
-<?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/anchors.inc.php'; ?>
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/anchors.inc.php'; ?>
     </ul>
         </div>
         <div class="promo" id="main">
@@ -68,7 +71,9 @@ require "includes/header.inc.php";
         </div>
 
         <div class="info">
-<?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/parag.inc.php'; ?>
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/parag.inc.php';
+?>
 
 
         </div>
@@ -83,7 +88,9 @@ require "includes/header.inc.php";
         </div>
         <div class="reasons" id="about">
             <ul class="reasons__ul">
-    <?=require $_SERVER['DOCUMENT_ROOT'] . '/includes/reasons.inc.php';?>
+    <?php
+    require $_SERVER['DOCUMENT_ROOT'] . '/includes/reasons.inc.php';
+    ?>
             </ul>
         </div>
         <div class="cards">
@@ -94,13 +101,19 @@ require $_SERVER['DOCUMENT_ROOT'] . '/includes/cards.inc.php';
 ?>
         </div>
 <div class="wrap_panel">
-<?=
+<?php
 require $_SERVER['DOCUMENT_ROOT'] . '/includes/faq.inc.php';
 
 ?>
 </div>
 
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A53668337e5785bee8127b031a1f8f4ba1a74ac0c23ed566812a0e5924e07e887&amp;source=constructor" width="1200" height="400" frameborder="0"></iframe>
+
+        <div class="feedback-space" style="height: 100px; display:flex; justify-content: center;">
+            <a href="admin/otzivi.php">
+            <button class="promo__button"> Посмотреть отзывы </button>
+            </a>
+        </div>
 
         <footer class="footer" id="contact">
             <div class="contacts">

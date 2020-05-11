@@ -57,7 +57,7 @@ echo("</h3>
 ");
 ?>
 <?php
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['login'])  &&  $_SESSION['role'] == 'admin') {
     echo("<div class='columns'>
     <div class='column has-text-centered is-full'>
         <a href='parag.admin.php'>
@@ -71,7 +71,16 @@ if (isset($_SESSION['login'])) {
         </a>
     </div>
 </div>");
-} else{
+} elseif (isset($_SESSION['login'])  &&  $_SESSION['role'] == 'user'){
+    echo("<div class='columns'>
+    <div class='column has-text-centered is-full'>
+        <a href='feedback.admin.php'>
+            <button class='button is-size-4 is-danger'> Оставить отзыв</button>
+        </a>
+</div>");
+
+
+}  else{
      echo("<div class='columns'>
 <div class='column has-text-centered is-full'>
      <button class='button is-size-4 is-danger'>

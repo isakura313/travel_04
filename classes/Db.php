@@ -17,4 +17,9 @@ class Db
         return $data[0];
 }
 
+public static function send_query($sql_statement){
+    $result = self::getdbconnect()-> query($sql_statement);
+    return $result;
+}
+
 }

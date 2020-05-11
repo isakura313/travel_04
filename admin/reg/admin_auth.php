@@ -8,7 +8,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/admin/admin_head.admin.php';
         <div class="field">
             <label for="name" class="label"> Введите вашу почту на нашем ресурсе</label>
             <div class="control">
-                <input type="text" class="input" name="mail" id="name" placeholder="Ваш логин" autocomplete="true">
+                <input type="text" class="input" name="mail" id="name" placeholder="Ваша почта" autocomplete="true">
             </div>
         </div>
 
