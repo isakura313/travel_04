@@ -68,6 +68,9 @@ if (isset($_SESSION['login'])  &&  $_SESSION['role'] == 'admin') {
         </a>
         <a href='anchor.admin.php'>
             <button class='button is-size-4 is-danger'> Редактировать ссылки</button>
+        </a>        
+        <a href='users.admin.php'>
+            <button class='button is-size-4 is-danger'>  Редактировать пользователей   </button>
         </a>
     </div>
 </div>");

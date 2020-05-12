@@ -18,14 +18,14 @@ if($result = $connect-> query("SELECT * FROM keywords")){
 
 
 
-if($result = $connect->query("SELECT * FROM anchors")){
-    $anchors_full = ['id'=>[],'anchor'=>[], 'content'=>[], 'ordera'=>[]];
+if($result = $connect->query("SELECT * FROM users")){
+    $users = ['id'=>[],'email'=>[], 'login'=>[], 'role'=>[]];
     while($row = $result->fetch_assoc()){
 
-        array_push($anchors_full["id"], $row['id']);
-        array_push($anchors_full["anchor"], $row['anchor']);
-        array_push($anchors_full["content"], $row['content']);
-        array_push($anchors_full["ordera"], $row['ordera']);
+        array_push($users["id"], $row['id']);
+        array_push($users["email"], $row['email']);
+        array_push($users["login"], $row['login']);
+        array_push($users["role"], $row['role']);
 
     }
 }
@@ -39,6 +39,15 @@ if($result = $connect->query("SELECT * FROM parag")){
         array_push($parag, $row['content']);
     }
 }
+
+if($result = $connect->query("SELECT * FROM parag")){
+    $parag_full = ['id'=>[], 'content' =>[]];
+    while($row = $result->fetch_assoc()){
+        array_push($parag_full['id'], $row['id']);
+        array_push($parag_full['content'], $row['content']);
+    }
+}
+
 
 if($result = $connect->query("SELECT * FROM parag")){
     $parag_full = ['id'=>[], 'content' =>[]];
@@ -98,6 +107,17 @@ if($result = $connect->query("SELECT * FROM feedback WHERE review = 1")){
     }
 }
 
+if($result = $connect->query("SELECT * FROM anchors")){
+    $anchors_full = ['id'=>[],'anchor'=>[], 'content'=>[], 'ordera'=>[]];
+    while($row = $result->fetch_assoc()){
+
+        array_push($anchors_full["id"], $row['id']);
+        array_push($anchors_full["anchor"], $row['anchor']);
+        array_push($anchors_full["content"], $row['content']);
+        array_push($anchors_full["ordera"], $row['ordera']);
+
+    }
+}
 
 
 
