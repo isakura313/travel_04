@@ -19,12 +19,13 @@ if($result = $connect-> query("SELECT * FROM keywords")){
 
 
 if($result = $connect->query("SELECT * FROM users")){
-    $users = ['id'=>[],'email'=>[], 'login'=>[], 'role'=>[]];
+    $users = ['id'=>[],'email'=>[], 'login'=>[], 'activated'=>[],'role'=>[]];
     while($row = $result->fetch_assoc()){
 
         array_push($users["id"], $row['id']);
         array_push($users["email"], $row['email']);
         array_push($users["login"], $row['login']);
+        array_push($users["activated"], $row['activated']);
         array_push($users["role"], $row['role']);
 
     }
@@ -104,6 +105,20 @@ if($result = $connect->query("SELECT * FROM feedback WHERE review = 1")){
         array_push($feedback['content'], $row['content']);
         array_push($feedback['author'], $row['author']);
         array_push($feedback['created_at'], $row['created_at']);
+//        array_push($feedback['review'], $row['review']);
+    }
+}
+
+
+if($result = $connect->query("SELECT * FROM feedback")){
+    $feedback_more = ['id'=>[], 'topic'=>[], 'content' => [], 'author'=>[], 'created_at'=>[], 'review'=>[]];
+    while($row = $result->fetch_assoc()){
+        array_push($feedback_more['id'], $row['id']);
+        array_push($feedback_more['topic'], $row['topic']);
+        array_push($feedback_more['content'], $row['content']);
+        array_push($feedback_more['author'], $row['author']);
+        array_push($feedback_more['created_at'], $row['created_at']);
+        array_push($feedback_more['review'], $row['review']);
     }
 }
 

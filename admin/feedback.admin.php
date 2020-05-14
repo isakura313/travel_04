@@ -11,13 +11,18 @@ if(isset($_POST['topic'])) {
     $content = $_POST['content'];
     $author = $_SESSION['login'];
     $created_at = date("Y-m-d H:i:s");
+    print($topic);
+    print($content);
+    print($author);
+    print($created_at);
 
 
-    $sql_state = "INSERT INTO feedback VALUES(NULL, '$topic', '$content','$author', '$created_at')";
+    $sql_state = "INSERT INTO feedback VALUES(NULL, '$topic', '$content','$author', '$created_at', 0)";
     if (Db::send_query($sql_state)) {
         echo("Ваш отзыв был отправлен на модерацию");
     } else {
         echo "Видимо, были допущены какие-то ошибки";
+
     }
 }
 
@@ -46,7 +51,7 @@ if(isset($_POST['topic'])) {
                     <input type="text" class="input is-medium" placeholder="Тема" name="topic">
 
 
-                    <label for="content" class="label"> Введите  контент ссылки</label>
+                    <label for="content" class="label"> Расскажите о вашем отдыхе больше!</label>
                     <textarea name="content" cols="70" rows="8" class="is-size-5" style="padding: 10px;"></textarea>
                 </div>
             </div>

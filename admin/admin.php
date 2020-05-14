@@ -2,6 +2,12 @@
 session_start();
 $title_info = "Главная страница админки";
 require $_SERVER['DOCUMENT_ROOT'] . '/admin/admin_head.admin.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/classes/Db.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/classes/User.php';
+if(isset($_SESSION['login'])) {
+    $login = $_SESSION['login'];
+    $gravatar = User::get_gravatar("$login");
+}
 ?>
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -40,20 +46,23 @@ require $_SERVER['DOCUMENT_ROOT'] . '/admin/admin_head.admin.php';
 
 <?php
 echo("<section class='has-background-link columns'>
-    <div class='column is-full has-text-white' >
-    
-        <h1 class='label is-size-2 has-text-centered '> Hello  ");
+    <div class='column is-half has-text-white is-offset-8' > ");
 if (isset($_SESSION['login'])) {
-    echo " <span class='has-text-primary has-text-weight-bold'> {$_SESSION['login']} </span> ";
-    echo " <span class='has-text-primary has-text-weight-bold'> {$_SESSION['role']} </span> ";
+    echo " <figure class='image is-128x128'>
+                 <img src={$gravatar} alt='avatar'>
+            </figure>"
+    ;
+    echo " <span class='has-text-white'> Здравствуйте, </span>   <span class='has-text-primary has-text-weight-bold'> {$_SESSION['login']} </span> <br>";
+    echo " <span class='has-text-white has-text-weight-bold'>  Ваша роль:  {$_SESSION['role']} </span>  </div></section>";
 } else {
-    echo " <span class='has-text-primary has-text-weight-bold'> Аноним </span> ";
+    echo " <span class='has-text-primary has-text-weight-bold'> Аноним </span> </div> </section> ";
 }
 
-echo("</h3>
-        <h3 class='is-size-3 has-text-centered'> Добро пожаловать в CMS систему</h3>
-    </div>
-</section>
+echo(" 
+<div class='columns'>
+  <h3 class='is-size-3 has-text-centered column '> Добро пожаловать в CMS систему</h3>
+</div>
+
 ");
 ?>
 <?php
@@ -71,6 +80,9 @@ if (isset($_SESSION['login'])  &&  $_SESSION['role'] == 'admin') {
         </a>        
         <a href='users.admin.php'>
             <button class='button is-size-4 is-danger'>  Редактировать пользователей   </button>
+        </a>       
+        <a href='edfeed.admin.php'>
+            <button class='button is-size-4 is-danger'>  Редактировать отзывы пользователей  </button>
         </a>
     </div>
 </div>");
@@ -83,7 +95,17 @@ if (isset($_SESSION['login'])  &&  $_SESSION['role'] == 'admin') {
 </div>");
 
 
-}  else{
+} elseif(isset($_SESSION['login'] ) && $_SESSION['role'] == 'ban'){
+    echo("<div class='columns'>
+<div class='column has-text-centered is-full'>
+     <button class='button is-size-4 is-danger'>
+    Вы были забанены на нашем ресурсе! Обратитесь к админстратору если это несправедливо
+    </button>
+    </div>
+    </div>");
+}
+
+else{
      echo("<div class='columns'>
 <div class='column has-text-centered is-full'>
      <button class='button is-size-4 is-danger'>

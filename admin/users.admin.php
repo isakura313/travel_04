@@ -16,21 +16,23 @@ require $_SERVER['DOCUMENT_ROOT'] . '/config/info.config.php';
                     <th> login </th>
                     <th> email </th>
                     <th> role </th>
-                    <th>      </th>
-                    <th>      </th>
-                    <th>      </th>
+                    <th> activated </th>
+<!--                    <th>      </th>-->
+<!--                    <th>      </th>-->
                 </tr>
                 </thead>
                 <?php
                 for ($i = 0; $i < count($users['id']); $i++) {
                     echo "<tr>
-    <th>{$users['id'][$i]} </th>
+        <th>{$users['id'][$i]} </th>
      <th>{$users['email'][$i]} </th>
      <th>{$users['login'][$i]} </th>
-     <th>{$users['role'][$i]} </th>
+     <th>{$users['activated'][$i]} </th>
+     <th class='role' >{$users['role'][$i]} </th>
      <th>  <button class='button is-danger banned' id={$users['id'][$i]} > Забанить</button> </th>
      <th>  <button class='button is-primary admin_make' id={$users['id'][$i]}> Сделать админом</button> </th>     
      <th>  <button class='button  is-link delete_it' id={$users['id'][$i]}> Удалить</button> </th>
+     <th>  <button class='button  is-black activе_it ' id={$users['id'][$i]}> Активировать</button> </th>
 
      
     </tr>";    }
