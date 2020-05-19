@@ -70,19 +70,19 @@ if (isset($_SESSION['login'])  &&  $_SESSION['role'] == 'admin') {
     echo("<div class='columns'>
     <div class='column has-text-centered is-full'>
         <a href='parag.admin.php'>
-            <button class='button is-size-4 is-danger'> Редактировать параграфы</button>
+            <button class='button is-small is-link'> Редактировать параграфы</button>
         </a>
         <a href='cards.admin.php'>
-            <button class='button is-size-4 is-danger'> Редактировать карточки</button>
+            <button class='button is-small is-black'> Редактировать карточки</button>
         </a>
         <a href='anchor.admin.php'>
-            <button class='button is-size-4 is-danger'> Редактировать ссылки</button>
+            <button class='button is-small is-primary'> Редактировать ссылки</button>
         </a>        
         <a href='users.admin.php'>
-            <button class='button is-size-4 is-danger'>  Редактировать пользователей   </button>
+            <button class='button is-small is-white'>  Редактировать пользователей   </button>
         </a>       
         <a href='edfeed.admin.php'>
-            <button class='button is-size-4 is-danger'>  Редактировать отзывы пользователей  </button>
+            <button class='button is-small is-danger'>  Редактировать отзывы пользователей  </button>
         </a>
     </div>
 </div>");

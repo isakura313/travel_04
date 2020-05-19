@@ -1,7 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/config/info.config.php';
-session_start();
-$_SESSION['login'] = '';
+require $_SERVER['DOCUMENT_ROOT'] . '/classes/User.php';
 
-session_destroy();
+User::logout();
 header('Location: ' . $home);

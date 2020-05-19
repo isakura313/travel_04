@@ -39,7 +39,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/config/info.config.php';
     </div>
 </nav>
 
-<div class="columns  is-multiline is-8 container has-background-success"  >
+<div class="columns is-multiline is-8  has-background-success" style="padding: 40px"  >
 
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/includes/feedback.inc.php';
